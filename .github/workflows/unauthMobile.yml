@@ -12,6 +12,6 @@ jobs:
             https://www.totaljobs.com
             https://www.stepstone.de
           budgetPath: ".github/lighthouse/budget.json"
-          configPath: "./.lighthouserc.js"
+          configPath: ".lighthouserc.js"
           uploadArtifacts: true
           temporaryPublicStorage: true
