@@ -6,4 +6,4 @@ Badge name method
 
 Badge path method
 
-![Unauth Mobile](https://github.com/Qarj/lighthouse-example/.github/workflows/unauthMobile.yml/badge.svg)
+![unauthMobile.yml](https://github.com/Qarj/lighthouse-example/.github/workflows/unauthMobile.yml/badge.svg)
