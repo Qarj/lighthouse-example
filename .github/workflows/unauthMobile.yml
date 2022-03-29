@@ -1,4 +1,4 @@
-name: Lighthouse CI
+name: Unauth Mobile
 on: push
 jobs:
   lighthouse:
@@ -12,5 +12,6 @@ jobs:
             https://www.totaljobs.com
             https://www.stepstone.de
           budgetPath: ".github/lighthouse/budget.json"
+          configPath: "./lighthouserc.js"
           uploadArtifacts: true
           temporaryPublicStorage: true
