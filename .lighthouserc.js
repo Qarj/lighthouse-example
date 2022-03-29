@@ -1,6 +1,7 @@
 module.exports = {
   ci: {
     collect: {
+      headful: true,
       settings: {
         extraHeaders: JSON.stringify({
           cookie:
