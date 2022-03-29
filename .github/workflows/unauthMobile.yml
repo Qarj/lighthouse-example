@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Unauth Desktop
+      - name: Unauth Mobile
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
             https://www.totaljobs.com
             https://www.stepstone.de
-          budgetPath: '.github/lighthouse/budget.json'
+          budgetPath: ".github/lighthouse/budget.json"
           uploadArtifacts: true
           temporaryPublicStorage: true
