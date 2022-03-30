@@ -1,24 +1,35 @@
 name: Unauth Mobile
 on:
-  push:
-  pull_request:
-  schedule:
-    - cron: "6 2 * * *"
+    push:
+    pull_request:
+    schedule:
+        - cron: "6 2 * * *"
 jobs:
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+    lighthouse:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Install puppeteer
-        run: npm install --save puppeteer
+            - name: Install puppeteer
+              run: npm install --save puppeteer
 
-      - name: Unauth Mobile
-        uses: treosh/lighthouse-ci-action@v9
-        with:
-          urls: |
-            https://www.totaljobs.com/membersarea
-          budgetPath: ".github/lighthouse/budget.json"
-          configPath: ".lighthouserc.js"
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+            - name: Unauth Mobile
+              uses: treosh/lighthouse-ci-action@v9
+              with:
+                  urls: |
+                      https://www.totaljobs.com/membersarea
+                  budgetPath: ".github/lighthouse/budget.json"
+                  configPath: ".lighthouserc.js"
+                  uploadArtifacts: true
+                  temporaryPublicStorage: true
+
+            - name: Zip png screenshots
+              if: always()
+              run: zip -r screenshots.zip *.png
+
+            - name: Archive screenshots
+              if: always()
+              uses: actions/upload-artifact@v2
+              with:
+                  name: screenshots
+                  path: screenshots.zip

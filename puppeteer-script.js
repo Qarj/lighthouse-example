@@ -31,9 +31,15 @@ module.exports = async (browser, context) => {
     const checkboxInput = await page.$('input[id="Form_RememberMe"]');
     await checkboxInput.click();
 
+    await page.screenshot({ path: "before_submit.png", fullPage: true });
+
     await Promise.all([page.click('input[id="btnLogin"]'), page.waitForNavigation()]);
 
+    await page.screenshot({ path: "after_submit.png", fullPage: true });
+
     await page.goto(membersAreaUrl);
+
+    await page.screenshot({ path: "after_members_area_load.png", fullPage: true });
 
     await page.waitForFunction('document.querySelector("body").innerText.includes("Here is your job search at a glance")');
 
