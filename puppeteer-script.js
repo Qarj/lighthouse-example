@@ -18,7 +18,7 @@ module.exports = async (browser, context) => {
     },
   ];
 
-  await page.setCookie(...cookies);
+  //   await page.setCookie(...cookies);
   await page.goto(url);
 
   const emailInput = await page.$('input[id="Form_Email"]');
@@ -32,5 +32,5 @@ module.exports = async (browser, context) => {
   ]);
 
   // close session for next run
-  //   await page.close();
+  await page.close();
 };
