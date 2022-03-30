@@ -7,6 +7,7 @@ module.exports = {
                 dumpio: true,
                 slowMo: 100,
             },
+            psiStrategy: "desktop",
             settings: {
                 extraHeaders: {
                     myHeader: "lighthouseCi=true",

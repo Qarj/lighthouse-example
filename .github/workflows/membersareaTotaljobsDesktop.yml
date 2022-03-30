@@ -1,9 +1,9 @@
-name: membersarea Totaljobs Mobile
+name: membersarea Totaljobs Desktop
 on:
     push:
     pull_request:
     schedule:
-        - cron: "6 8 * * *"
+        - cron: "6 2 * * *"
 jobs:
     lighthouse:
         runs-on: ubuntu-latest
@@ -13,13 +13,13 @@ jobs:
             - name: Install puppeteer
               run: npm install --save puppeteer
 
-            - name: membersarea Totaljobs Mobile
+            - name: membersarea Totaljobs Desktop
               uses: treosh/lighthouse-ci-action@v9
               with:
                   urls: |
                       https://www.totaljobs.com/membersarea
                   budgetPath: ".github/lighthouse/budget.json"
-                  configPath: ".lighthouserc-totaljobs-mobile.js"
+                  configPath: ".lighthouserc-totaljobs-desktop.js"
                   uploadArtifacts: true
                   temporaryPublicStorage: true
 
