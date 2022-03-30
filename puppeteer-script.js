@@ -5,6 +5,7 @@
 module.exports = async (browser, context) => {
     // launch browser for LHCI
     const page = await browser.newPage();
+    await page.setUserAgent("WebInject and Selenium");
     await page.setViewport({ width: 1920, height: 1080 });
     const baseurl = "https://www.totaljobs.com";
     const membersAreaUrl = `${baseurl}/membersarea`;
@@ -44,20 +45,10 @@ module.exports = async (browser, context) => {
 
     await page.screenshot({ path: "04_immediately_after_submit.png", fullPage: true });
 
-    await sleep(10000);
-
-    await page.screenshot({ path: "05_after_sleep.png", fullPage: true });
-
     await page.waitForFunction('document.querySelector("body").innerText.includes("Here is your job search at a glance")');
 
-    await page.screenshot({ path: "06_after_wait_members_area_text.png", fullPage: true });
+    await page.screenshot({ path: "05_after_wait_members_area_text.png", fullPage: true });
 
     // close session for next run
     await page.close();
-
-    function sleep(ms) {
-        return new Promise((resolve) => {
-            setTimeout(resolve, ms);
-        });
-    }
 };
