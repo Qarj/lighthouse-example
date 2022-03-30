@@ -1,12 +1,8 @@
 # lighthouse-example
 
-Badge name method
-
-![Auth Mobile](https://github.com/Qarj/lighthouse-example/workflows/Auth%20Mobile/badge.svg)
-
 Badge path method
 
-![Auth Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/authMobile.yml/badge.svg)
+![membersarea Totaljobs Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsMobile.yml/badge.svg)
 
 ## Reference
 
