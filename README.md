@@ -1,6 +1,6 @@
 # lighthouse-example
 
-Badge path method
+![membersarea Totaljobs Desktop](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsDesktop.yml/badge.svg)
 
 ![membersarea Totaljobs Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsMobile.yml/badge.svg)
 
