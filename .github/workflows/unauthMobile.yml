@@ -17,7 +17,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
-            https://www.totaljobs.com
+            https://www.totaljobs.com/membersarea
           budgetPath: ".github/lighthouse/budget.json"
           configPath: ".lighthouserc.js"
           uploadArtifacts: true
