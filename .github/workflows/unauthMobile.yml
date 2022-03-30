@@ -23,10 +23,6 @@ jobs:
                   uploadArtifacts: true
                   temporaryPublicStorage: true
 
-            - name: Zip png screenshots
-              if: always()
-              run: zip -r screenshots.zip *.png
-
             - name: Archive screenshots
               if: always()
               uses: actions/upload-artifact@v2

@@ -44,10 +44,20 @@ module.exports = async (browser, context) => {
 
     await page.screenshot({ path: "04_immediately_after_submit.png", fullPage: true });
 
+    await sleep(10000);
+
+    await page.screenshot({ path: "05_after_sleep.png", fullPage: true });
+
     await page.waitForFunction('document.querySelector("body").innerText.includes("Here is your job search at a glance")');
 
-    await page.screenshot({ path: "05_after_wait_members_area_text.png", fullPage: true });
+    await page.screenshot({ path: "06_after_wait_members_area_text.png", fullPage: true });
 
     // close session for next run
     await page.close();
+
+    function sleep(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
 };
