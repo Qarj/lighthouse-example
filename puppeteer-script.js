@@ -32,5 +32,5 @@ module.exports = async (browser, context) => {
   ]);
 
   // close session for next run
-  await page.close();
+  //   await page.close();
 };
