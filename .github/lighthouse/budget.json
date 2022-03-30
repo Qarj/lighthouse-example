@@ -1,23 +1,23 @@
 [
-    {
-      "path": "/*",
-      "resourceSizes": [
-        {
-          "resourceType": "document",
-          "budget": 100
-        },
-        {
-          "resourceType": "script",
-          "budget": 950
-        },
-        {
-          "resourceType": "stylesheet",
-          "budget": 150
-        },
-        {
-          "resourceType": "total",
-          "budget": 4500
-        }
-      ]
-    }
-  ]
+  {
+    "path": "/*",
+    "resourceSizes": [
+      {
+        "resourceType": "document",
+        "budget": 100
+      },
+      {
+        "resourceType": "script",
+        "budget": 1550
+      },
+      {
+        "resourceType": "stylesheet",
+        "budget": 150
+      },
+      {
+        "resourceType": "total",
+        "budget": 4500
+      }
+    ]
+  }
+]

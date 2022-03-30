@@ -5,7 +5,7 @@
 module.exports = async (browser, context) => {
   // launch browser for LHCI
   const page = await browser.newPage();
-  const url = "http://www.totaljobs.com/account/signin";
+  const url = "https://www.totaljobs.com/account/signin";
   await page.goto(url);
 
   const cookies = [
