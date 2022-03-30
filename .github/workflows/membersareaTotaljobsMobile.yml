@@ -19,7 +19,7 @@ jobs:
                   urls: |
                       https://www.totaljobs.com/membersarea
                   budgetPath: ".github/lighthouse/budget.json"
-                  configPath: ".lighthouserc.js"
+                  configPath: ".lighthouserc-totaljobs.js"
                   uploadArtifacts: true
                   temporaryPublicStorage: true
 
