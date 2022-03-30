@@ -25,8 +25,7 @@ module.exports = async (browser, context) => {
 
   await page.type("#Form_Email", "lighthouse@example.com");
   await page.type("#Form_Password", "ExamplePassword1");
-  await page.click('[type="submit"]');
-  await page.waitForNavigation();
+  await Promise.all([page.click('[type="submit"]'), page.waitForNavigation()]);
   // close session for next run
   await page.close();
 };
