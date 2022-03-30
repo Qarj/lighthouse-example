@@ -19,14 +19,11 @@ module.exports = async (browser, context) => {
 
     await page.screenshot({ path: "02_cookie_wall.png", fullPage: true });
 
-    const cookies = [
-        {
-            name: "CONSENTMGR",
-            value: "consent:true",
-        },
-    ];
+    const [span] = await page.$x("//span[contains(., 'Accept All')]");
+    if (span) {
+        await span.click();
+    }
 
-    await page.setCookie(...cookies);
     await page.goto(membersAreaUrl);
 
     await page.waitForFunction('document.querySelector("body").innerText.includes("Jobseeker sign in")');
