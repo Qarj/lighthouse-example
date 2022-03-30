@@ -1,4 +1,4 @@
-name: Unauth Mobile
+name: Auth Mobile
 on:
     push:
     pull_request:
@@ -13,11 +13,14 @@ jobs:
             - name: Install puppeteer
               run: npm install --save puppeteer
 
-            - name: Unauth Mobile
+            - name: Auth Mobile
               uses: treosh/lighthouse-ci-action@v9
               with:
                   urls: |
                       https://www.totaljobs.com/membersarea
+                      https://www.totaljobs.com/jobs/driver
+                      https://www.totaljobs.com/job/0
+                      https://www.totaljobs.com/authenticated/default.aspx
                   budgetPath: ".github/lighthouse/budget.json"
                   configPath: ".lighthouserc.js"
                   uploadArtifacts: true
