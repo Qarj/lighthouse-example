@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+      - name: Install puppeteer
+        run: npm install --save puppeteer
+
       - name: Unauth Mobile
         uses: treosh/lighthouse-ci-action@v9
         with:
