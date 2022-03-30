@@ -2,6 +2,11 @@ module.exports = {
   ci: {
     collect: {
       puppeteerScript: "puppeteer-script.js",
+      puppeteerLaunchOptions: {
+        defaultViewport: { width: 1920, height: 1080 },
+        dumpio: true,
+        slowMo: 100,
+      },
       settings: {
         extraHeaders: {
           DudCookie:
