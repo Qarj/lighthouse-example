@@ -7,11 +7,16 @@ module.exports = async (browser, context) => {
     const page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080 });
     const baseurl = "https://www.totaljobs.com";
-    const authurl = `${baseurl}/account/signin`;
     const membersAreaUrl = `${baseurl}/membersarea`;
     const email = "lighthouse@example.com";
     const data2 = "ExamplePassword1";
-    await page.goto(authurl);
+    await page.goto(baseurl);
+
+    await page.screenshot({ path: "01_initial_load.png", fullPage: true });
+
+    await page.waitForFunction('document.querySelector("body").innerText.includes("We use cookies")');
+
+    await page.screenshot({ path: "02_cookie_wall.png", fullPage: true });
 
     const cookies = [
         {
@@ -21,7 +26,9 @@ module.exports = async (browser, context) => {
     ];
 
     await page.setCookie(...cookies);
-    await page.goto(authurl);
+    await page.goto(membersAreaUrl);
+
+    await page.waitForFunction('document.querySelector("body").innerText.includes("Jobseeker sign in")');
 
     const emailInput = await page.$('input[id="Form_Email"]');
     const data2Input = await page.$('input[id="Form_Password"]');
@@ -31,17 +38,15 @@ module.exports = async (browser, context) => {
     const checkboxInput = await page.$('input[id="Form_RememberMe"]');
     await checkboxInput.click();
 
-    await page.screenshot({ path: "before_submit.png", fullPage: true });
+    await page.screenshot({ path: "03_before_submit.png", fullPage: true });
 
     await Promise.all([page.click('input[id="btnLogin"]'), page.waitForNavigation()]);
 
-    await page.screenshot({ path: "after_submit.png", fullPage: true });
-
-    await page.goto(membersAreaUrl);
-
-    await page.screenshot({ path: "after_members_area_load.png", fullPage: true });
+    await page.screenshot({ path: "04_immediately_after_submit.png", fullPage: true });
 
     await page.waitForFunction('document.querySelector("body").innerText.includes("Here is your job search at a glance")');
+
+    await page.screenshot({ path: "05_after_wait_members_area_text.png", fullPage: true });
 
     // close session for next run
     await page.close();
