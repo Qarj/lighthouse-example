@@ -18,7 +18,7 @@ module.exports = async (browser, context) => {
     },
   ];
 
-  //   await page.setCookie(...cookies);
+  await page.setCookie(...cookies);
   await page.goto(url);
 
   const emailInput = await page.$('input[id="Form_Email"]');
