@@ -6,6 +6,8 @@ module.exports = async (browser, context) => {
   // launch browser for LHCI
   const page = await browser.newPage();
   const url = "https://www.totaljobs.com/account/signin";
+  const email = "lighthouse@example.com";
+  const data2 = "ExamplePassword1";
   await page.goto(url);
 
   const cookies = [
@@ -23,9 +25,19 @@ module.exports = async (browser, context) => {
   await page.setCookie(...cookies);
   await page.goto(url);
 
-  await page.type("#Form_Email", "lighthouse@example.com");
-  await page.type("#Form_Password", "ExamplePassword1");
-  await Promise.all([page.click('[type="submit"]'), page.waitForNavigation()]);
+  //   await page.type("#Form_Email", "lighthouse@example.com");
+  //   await page.type("#Form_Password", "ExamplePassword1");
+
+  const emailInput = await page.$('input[id="Form_Email"]');
+  const data2Input = await page.$('input[id="Form_Password"]');
+  await emailInput.type(email);
+  await data2Input.type(data2);
+
+  await Promise.all([
+    page.click('input[id="btnLogin"]'),
+    page.waitForNavigation(),
+  ]);
+
   // close session for next run
   await page.close();
 };
