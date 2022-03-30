@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      puppeteerScript: "puppeteer-script.js",
+      puppeteerScript: "puppeteer-script-alt.js",
       puppeteerLaunchOptions: {
         defaultViewport: { width: 1920, height: 1080 },
         dumpio: true,
