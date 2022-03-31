@@ -3,7 +3,11 @@ on:
     push:
     pull_request:
     schedule:
-        - cron: "6 8 * * *"
+        - cron: "2 6 * * *"
+
+env:
+    TOTALJOBS_PASS: ${{ secrets.TOTALJOBS_PASS }}
+
 jobs:
     lighthouse:
         runs-on: ubuntu-latest
