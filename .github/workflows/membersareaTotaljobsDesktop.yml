@@ -7,6 +7,7 @@ on:
 
 env:
     TOTALJOBS_PASS: ${{ secrets.TOTALJOBS_PASS }}
+    AGENT: ${{ secrets.AGENT }}
 
 jobs:
     lighthouse:
