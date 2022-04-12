@@ -19,7 +19,7 @@ jobs:
               run: npm install --save puppeteer
 
             - name: Substitute password
-              run: sed "s/__password__/$TOTALJOBS_PASS/g" puppeteer-totaljobs.js > puppeteer-totaljobs-sub.js
+              run: sed "s/ExamplePassword1/$TOTALJOBS_PASS/g" puppeteer-totaljobs.js > puppeteer-totaljobs-sub.js
 
             - name: Setup agent
               run: sed -i "s/Supertest and Cypress/$AGENT/g" puppeteer-totaljobs-sub.js
