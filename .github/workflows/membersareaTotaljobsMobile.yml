@@ -17,6 +17,9 @@ jobs:
             - name: Install puppeteer
               run: npm install --save puppeteer
 
+            - name: Substitute password
+              run: sed "s/__password__/$TOTALJOBS_PASS/g" puppeteer-totaljobs.js > puppeteer-totaljobs-sub.js
+
             - name: membersarea Totaljobs Mobile
               uses: treosh/lighthouse-ci-action@v9
               with:

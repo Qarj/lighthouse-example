@@ -10,7 +10,7 @@ module.exports = async (browser, context) => {
     const baseurl = "https://www.totaljobs.com";
     const membersAreaUrl = `${baseurl}/membersarea`;
     const email = "lighthouse@example.com";
-    const data2 = "ExamplePassword1";
+    const data2 = "__password__";
     await page.goto(baseurl);
 
     await page.screenshot({ path: "01_initial_load.png", fullPage: true });
