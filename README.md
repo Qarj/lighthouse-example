@@ -1,5 +1,9 @@
 # lighthouse-example
 
+![membersarea DE Desktop](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaDeDesktop.yml/badge.svg)
+
+![membersarea DE Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaDeMobile.yml/badge.svg)
+
 ![membersarea Totaljobs Desktop](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsDesktop.yml/badge.svg)
 
 ![membersarea Totaljobs Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsMobile.yml/badge.svg)

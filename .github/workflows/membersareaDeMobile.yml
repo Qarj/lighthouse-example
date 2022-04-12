@@ -1,0 +1,42 @@
+name: membersarea DE Mobile
+on:
+    push:
+    pull_request:
+    schedule:
+        - cron: "12 6 * * *"
+
+env:
+    TOTALJOBS_PASS: ${{ secrets.TOTALJOBS_PASS }}
+    AGENT: ${{ secrets.AGENT }}
+
+jobs:
+    lighthouse:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Install puppeteer
+              run: npm install --save puppeteer
+
+            - name: Substitute password
+              run: sed "s/ExamplePassword1/$TOTALJOBS_PASS/g" puppeteer-de.js > puppeteer-de-sub.js
+
+            - name: Setup agent
+              run: sed -i "s/Supertest and Cypress/$AGENT/g" puppeteer-de-sub.js
+
+            - name: membersarea DE Mobile
+              uses: treosh/lighthouse-ci-action@v9
+              with:
+                  urls: |
+                      https://www.stepstone.de/membersarea
+                  budgetPath: ".github/lighthouse/budget.json"
+                  configPath: ".lighthouserc-de-mobile.js"
+                  uploadArtifacts: true
+                  temporaryPublicStorage: true
+
+            - name: Archive screenshots
+              if: always()
+              uses: actions/upload-artifact@v2
+              with:
+                  name: screenshots
+                  path: "*.png"
