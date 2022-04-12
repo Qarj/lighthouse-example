@@ -20,6 +20,9 @@ jobs:
             - name: Substitute password
               run: sed "s/__password__/$TOTALJOBS_PASS/g" puppeteer-totaljobs.js > puppeteer-totaljobs-sub.js
 
+            - name: Setup agent
+              run: sed -i "s/Supertest and Cypress/$AGENT/g" puppeteer-totaljobs-sub.js
+
             - name: membersarea Totaljobs Desktop
               uses: treosh/lighthouse-ci-action@v9
               with:
