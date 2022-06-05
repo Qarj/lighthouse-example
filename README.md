@@ -8,6 +8,10 @@
 
 ![membersarea Totaljobs Mobile](https://github.com/Qarj/lighthouse-example/actions/workflows/membersareaTotaljobsMobile.yml/badge.svg)
 
+## GitHub Actions
+
+Needs a commit every 60 days to keep the workflow active.
+
 ## Reference
 
 Use a puppeteer script for auth:
