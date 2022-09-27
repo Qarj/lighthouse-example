@@ -12,6 +12,15 @@
 
 Needs a commit every 60 days to keep the workflow active. Again.
 
+## Validating pupeteer scripts
+
+Go to https://github.com/Qarj/puppeteer-jest-example and run the scripts:
+
+```sh
+npm run test authtj
+npm run test authde
+```
+
 ## Reference
 
 Use a puppeteer script for auth:
