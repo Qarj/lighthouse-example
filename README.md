@@ -12,7 +12,7 @@
 
 Needs a commit every 60 days to keep the workflow active. Again.
 
-## Validating pupeteer scripts
+## Validating puppeteer scripts
 
 Go to https://github.com/Qarj/puppeteer-jest-example and run the scripts:
 
